@@ -1,0 +1,494 @@
+{
+  "assistant": {
+    "name": "HooriGPT",
+    "tagline": "Get to know the person behind the code.",
+    "mode": "predefined_story",
+    "usesLLM": false,
+    "usesExternalAPI": false
+  },
+
+  "initialTopics": [
+    "who-am-i",
+    "where-it-started",
+    "what-i-build",
+    "how-i-work",
+    "my-stack",
+    "outside-code",
+    "whats-next",
+    "contact"
+  ],
+
+  "topics": {
+    "who-am-i": {
+      "id": "who-am-i",
+      "label": "Who am I?",
+      "question": "Who is Hoornain?",
+      "response": "I'm a Full Stack Developer currently exploring AI Engineering. I'm the kind of developer who isn't particularly interested in staying inside one box — if something is worth learning, I want to learn it. I like to think of myself as a learn-it-all and exploring-type developer. I enjoy building crazy UIs, experimenting with new technologies, and honestly, building almost anything that makes me curious.",
+      "followUpTopics": [
+        "what-i-build",
+        "why-i-build",
+        "my-stack",
+        "how-i-work"
+      ]
+    },
+
+    "where-it-started": {
+      "id": "where-it-started",
+      "label": "Where it started",
+      "question": "How did Hoornain get into coding?",
+      "response": "My journey started around the time I was finishing school. During my 12th grade, I was exploring different skills, gigs, freelancing, and the kinds of things people were building and earning from online. That's when I started learning frontend development. That initial curiosity eventually led me to Computer Science Engineering, and what started as an exploration gradually became something I wanted to build my career around.",
+      "followUpTopics": [
+        "why-frontend",
+        "codrel",
+        "what-came-next"
+      ]
+    },
+
+    "why-frontend": {
+      "id": "why-frontend",
+      "label": "Why frontend?",
+      "question": "Why did Hoornain start with frontend development?",
+      "response": "Frontend was where I could immediately see the result of what I was building. I loved the idea that code could turn into something visual, interactive, and usable. That became my entry point into development, and eventually I became curious about everything happening behind the interface too.",
+      "followUpTopics": [
+        "what-came-next",
+        "codrel",
+        "what-i-build"
+      ]
+    },
+
+    "codrel": {
+      "id": "codrel",
+      "label": "What is CodRel?",
+      "question": "What role did CodRel play in Hoornain's journey?",
+      "response": "CodRel was a coding community created by my seniors at college, and honestly, it became one of the most important parts of my growth as a developer. My seniors became my mentors and helped establish a huge part of the foundation I have today. The community constantly pushed me to learn more, build more, and explore things outside what I already knew.",
+      "followUpTopics": [
+        "my-mentors",
+        "what-came-next",
+        "full-stack"
+      ]
+    },
+
+    "my-mentors": {
+      "id": "my-mentors",
+      "label": "My mentors",
+      "question": "Who influenced Hoornain's growth as a developer?",
+      "response": "My seniors and mentors from CodRel had a huge influence on me. They were some of the people who pushed me to keep learning and gave me the foundation that helped me grow from someone learning frontend development into a much more complete developer.",
+      "followUpTopics": [
+        "full-stack",
+        "codrel",
+        "what-came-next"
+      ]
+    },
+
+    "what-came-next": {
+      "id": "what-came-next",
+      "label": "What came next?",
+      "question": "How did Hoornain move from frontend into full-stack development?",
+      "response": "Once I became comfortable with frontend development, I started wondering what was happening behind the screen. I wanted to understand APIs, servers, databases, authentication, and how the different pieces of an application actually communicate. So I kept learning, kept building, and gradually moved into full-stack development.",
+      "followUpTopics": [
+        "full-stack",
+        "why-ai",
+        "what-i-build"
+      ]
+    },
+
+    "full-stack": {
+      "id": "full-stack",
+      "label": "Full Stack",
+      "question": "Why did Hoornain become a Full Stack Developer?",
+      "response": "I wanted to understand the whole picture. Building only one part of an application wasn't enough for my curiosity anymore. I wanted to understand how the frontend, backend, database, authentication, APIs, and deployment all fit together. That curiosity gradually turned me into a Full Stack Developer.",
+      "followUpTopics": [
+        "what-i-build",
+        "my-stack",
+        "why-ai"
+      ]
+    },
+
+    "why-ai": {
+      "id": "why-ai",
+      "label": "Why AI?",
+      "question": "Why is Hoornain exploring AI Engineering?",
+      "response": "Because apparently learning one side of technology wasn't enough for me. Once I became comfortable building applications, I became interested in making them intelligent too. AI Engineering lets me combine the software engineering I already enjoy with systems that can reason, retrieve information, and create genuinely useful experiences.",
+      "followUpTopics": [
+        "currently-learning",
+        "ai-stack",
+        "whats-next"
+      ]
+    },
+
+    "what-i-build": {
+      "id": "what-i-build",
+      "label": "What I build",
+      "question": "What does Hoornain enjoy building?",
+      "response": "I enjoy building things that I would actually want to use. That could be a polished frontend experience, a complete full-stack application, an API, an AI-powered product, or something completely experimental. I especially enjoy building unusual or creative UIs because making something feel good to use is just as exciting to me as making it technically work.",
+      "followUpTopics": [
+        "why-i-build",
+        "my-stack",
+        "projects",
+        "what-i-do"
+      ]
+    },
+
+    "why-i-build": {
+      "id": "why-i-build",
+      "label": "Why I build",
+      "question": "What motivates Hoornain to build things?",
+      "response": "A big part of it is the feeling of making an idea real. When I finally get an application working the way I imagined it, I get ridiculously proud of it — almost like a mother being proud of her child. I also tend to build from my own perspective. If I am facing a problem, I first think about how I would solve it for myself. If I would genuinely use the solution, I believe there is a good chance someone else would too.",
+      "followUpTopics": [
+        "how-i-work",
+        "what-i-build",
+        "fun-facts"
+      ]
+    },
+
+    "what-i-do": {
+      "id": "what-i-do",
+      "label": "What I do",
+      "question": "What can Hoornain build?",
+      "response": "I build full-stack web applications, interactive frontend experiences, backend systems, APIs, and AI-powered applications. I enjoy taking an idea from concept to something functional and polished, and I'm increasingly interested in combining strong software engineering with intelligent systems.",
+      "followUpTopics": [
+        "my-stack",
+        "projects",
+        "currently-learning"
+      ]
+    },
+
+    "how-i-work": {
+      "id": "how-i-work",
+      "label": "How I work",
+      "question": "How does Hoornain approach building things?",
+      "response": "I am curious by default. If I don't know something, my first instinct isn't to avoid it — it's to learn it. I'm comfortable stepping outside my existing stack, reading documentation, experimenting, breaking things, fixing them, and eventually making the unfamiliar thing work. I also tend to take ownership of what I build and of the mistakes I make along the way.",
+      "followUpTopics": [
+        "fast-learner",
+        "values",
+        "fun-facts",
+        "pressure"
+      ]
+    },
+
+    "fast-learner": {
+      "id": "fast-learner",
+      "label": "Fast learner?",
+      "question": "Is Hoornain a fast learner?",
+      "response": "I would say so. Give me a technology or stack I haven't worked with before, documentation, enough time to experiment, and a reason to get invested in it, and I'll figure it out. I don't expect to know everything beforehand — I'm comfortable learning while building.",
+      "followUpTopics": [
+        "how-i-work",
+        "currently-learning",
+        "whats-next"
+      ]
+    },
+
+    "pressure": {
+      "id": "pressure",
+      "label": "Under pressure",
+      "question": "How does Hoornain handle pressure?",
+      "response": "I actually work pretty well under pressure. Sometimes a little too well. There are occasions where I accidentally create the pressure myself by procrastinating, and then suddenly the deadline activates my final-boss productivity mode. Somehow, the pressure tends to make me more efficient.",
+      "followUpTopics": [
+        "fun-facts",
+        "values",
+        "how-i-work"
+      ]
+    },
+
+    "my-stack": {
+      "id": "my-stack",
+      "label": "My stack",
+      "question": "What technologies does Hoornain work with?",
+      "response": "My stack spans frontend development, backend engineering, and AI Engineering. I work with JavaScript, TypeScript, React, Next.js, Tailwind CSS, Three.js, React Three Fiber, GSAP, Vite, Node.js, Express, Python, FastAPI, MongoDB, PostgreSQL, SQL, Docker, Git, LLM integrations, RAG, embeddings, vector databases, FAISS, LangChain, LangGraph, and NVIDIA NIM.",
+      "followUpTopics": [
+        "frontend-stack",
+        "backend-stack",
+        "ai-stack"
+      ]
+    },
+
+    "frontend-stack": {
+      "id": "frontend-stack",
+      "label": "Frontend",
+      "question": "What is Hoornain's frontend stack?",
+      "response": "My frontend stack includes JavaScript, TypeScript, React, Next.js, Tailwind CSS, Three.js, React Three Fiber, GSAP, Vite, and Streamlit.",
+      "technologyGroup": "frontend",
+      "followUpTopics": [
+        "backend-stack",
+        "ai-stack",
+        "projects"
+      ]
+    },
+
+    "backend-stack": {
+      "id": "backend-stack",
+      "label": "Backend",
+      "question": "What is Hoornain's backend stack?",
+      "response": "My backend experience includes Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, SQL, SQLite, Docker, Git, and REST APIs.",
+      "technologyGroup": "backend",
+      "followUpTopics": [
+        "frontend-stack",
+        "ai-stack",
+        "projects"
+      ]
+    },
+
+    "ai-stack": {
+      "id": "ai-stack",
+      "label": "AI",
+      "question": "What is Hoornain currently working with in AI?",
+      "response": "I'm currently exploring AI Engineering through LLM integration, RAG, embeddings, vector databases, FAISS, LangChain, LangGraph, and NVIDIA NIM. I'm interested in using these technologies to build intelligent applications rather than treating AI as something separate from software engineering.",
+      "technologyGroup": "ai",
+      "followUpTopics": [
+        "why-ai",
+        "currently-learning",
+        "whats-next"
+      ]
+    },
+
+    "projects": {
+      "id": "projects",
+      "label": "Projects",
+      "question": "What projects has Hoornain built?",
+      "response": "I've built projects across frontend development, full-stack engineering, backend systems, and AI-powered applications. A lot of my projects come from wanting to solve a problem or experiment with something I find interesting.",
+      "action": {
+        "type": "link",
+        "label": "View Projects →",
+        "href": "/projects"
+      },
+      "followUpTopics": [
+        "what-i-build",
+        "my-stack",
+        "why-i-build"
+      ]
+    },
+
+    "outside-code": {
+      "id": "outside-code",
+      "label": "Outside code",
+      "question": "What does Hoornain enjoy outside coding?",
+      "response": "Coding takes up a lot of my attention, and I can easily disappear into a project for hours without realizing what's happening around me. Outside coding, I enjoy cooking, exploring, and getting immersed in storytelling. I especially love storytelling because I want to bring some of that feeling into the applications I build too.",
+      "followUpTopics": [
+        "interests",
+        "fun-facts",
+        "why-i-build"
+      ]
+    },
+
+    "interests": {
+      "id": "interests",
+      "label": "Interests",
+      "question": "What is Hoornain interested in?",
+      "response": "I'm interested in technology, building things, creative UI, AI, storytelling, cooking, exploring, and learning new things. More than anything, I enjoy getting completely immersed in something and seeing how far I can take it.",
+      "followUpTopics": [
+        "outside-code",
+        "fun-facts",
+        "currently-learning"
+      ]
+    },
+
+    "fun-facts": {
+      "id": "fun-facts",
+      "label": "Fun facts",
+      "question": "Tell me something fun about Hoornain.",
+      "response": "I have a good sense of humor, I love talking about things I'm interested in, and if you give me your ears, I can probably talk for days. I also genuinely enjoy working under pressure — occasionally helped along by my own questionable relationship with procrastination. And when something catches my interest, I tend to get very invested in it.",
+      "followUpTopics": [
+        "pressure",
+        "interests",
+        "values"
+      ]
+    },
+
+    "values": {
+      "id": "values",
+      "label": "Values",
+      "question": "What does Hoornain value?",
+      "response": "I value curiosity, honesty, creativity, and problem-solving. I'm naturally curious and like understanding how things work rather than just using them. I also believe in taking ownership of my mistakes. If I've done something wrong, I'd rather acknowledge it, fix it, and learn from it than avoid responsibility.",
+      "followUpTopics": [
+        "how-i-work",
+        "fast-learner",
+        "whats-next"
+      ]
+    },
+
+    "currently-learning": {
+      "id": "currently-learning",
+      "label": "Currently learning",
+      "question": "What is Hoornain currently learning?",
+      "response": "Right now I'm focusing on System Design and AI Engineering. I want to become better at designing highly professional and scalable applications while also learning how to make those applications as intelligent as possible.",
+      "followUpTopics": [
+        "why-ai",
+        "ai-stack",
+        "whats-next"
+      ]
+    },
+
+    "whats-next": {
+      "id": "whats-next",
+      "label": "What's next?",
+      "question": "What does Hoornain want to do next?",
+      "response": "The goal is pretty straightforward: build the best possible career I can in this field. I want to keep learning every day, keep expanding the things I can build, and become someone who can design and engineer systems that are both technically strong and genuinely intelligent.",
+      "followUpTopics": [
+        "currently-learning",
+        "why-ai",
+        "goals"
+      ]
+    },
+
+    "goals": {
+      "id": "goals",
+      "label": "Goals",
+      "question": "What are Hoornain's career goals?",
+      "response": "I want to keep growing as a software and AI engineer. I want to become capable of building scalable, professional applications and eventually combine that engineering depth with strong AI capabilities. I'm not particularly interested in stopping at the stack I know today — I want to keep learning.",
+      "followUpTopics": [
+        "currently-learning",
+        "whats-next",
+        "my-stack"
+      ]
+    },
+
+    "resume": {
+      "id": "resume",
+      "label": "Resume",
+      "question": "Where can I find Hoornain's resume?",
+      "response": "You can find my resume through the Contact Rail on the right side of the portfolio, along with the other ways to reach me.",
+      "action": {
+        "type": "contactRail",
+        "target": "resume"
+      },
+      "followUpTopics": [
+        "contact",
+        "experience"
+      ]
+    },
+
+    "contact": {
+      "id": "contact",
+      "label": "Contact",
+      "question": "How can I contact Hoornain?",
+      "response": "The easiest way is through the Contact Rail on the right side of the portfolio. It contains my email, GitHub, LinkedIn, and resume, so everything you need to reach or learn more about me is right there.",
+      "action": {
+        "type": "contactRail"
+      },
+      "followUpTopics": [
+        "resume",
+        "projects",
+        "experience"
+      ]
+    }
+  },
+
+  "technologyGroups": {
+    "frontend": [
+      {
+        "name": "JavaScript",
+        "icon": "SiJavascript"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "SiTypescript"
+      },
+      {
+        "name": "React",
+        "icon": "SiReact"
+      },
+      {
+        "name": "Next.js",
+        "icon": "SiNextdotjs"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "SiTailwindcss"
+      },
+      {
+        "name": "Three.js",
+        "icon": "SiThreedotjs"
+      },
+      {
+        "name": "React Three Fiber",
+        "icon": "SiReact"
+      },
+      {
+        "name": "GSAP",
+        "icon": "SiGreensock"
+      },
+      {
+        "name": "Vite",
+        "icon": "SiVite"
+      },
+      {
+        "name": "Streamlit",
+        "icon": "SiStreamlit"
+      }
+    ],
+
+    "backend": [
+      {
+        "name": "Node.js",
+        "icon": "SiNodedotjs"
+      },
+      {
+        "name": "Express.js",
+        "icon": "SiExpress"
+      },
+      {
+        "name": "Python",
+        "icon": "SiPython"
+      },
+      {
+        "name": "FastAPI",
+        "icon": "SiFastapi"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "SiMongodb"
+      },
+      {
+        "name": "PostgreSQL",
+        "icon": "SiPostgresql"
+      },
+      {
+        "name": "Docker",
+        "icon": "SiDocker"
+      },
+      {
+        "name": "Git",
+        "icon": "SiGit"
+      }
+    ],
+
+    "ai": [
+      {
+        "name": "Python",
+        "icon": "SiPython"
+      },
+      {
+        "name": "LLM Integration",
+        "icon": null
+      },
+      {
+        "name": "RAG",
+        "icon": null
+      },
+      {
+        "name": "Embeddings",
+        "icon": null
+      },
+      {
+        "name": "Vector Databases",
+        "icon": null
+      },
+      {
+        "name": "FAISS",
+        "icon": null
+      },
+      {
+        "name": "LangChain",
+        "icon": "SiLangchain"
+      },
+      {
+        "name": "LangGraph",
+        "icon": null
+      },
+      {
+        "name": "NVIDIA NIM",
+        "icon": null
+      }
+    ]
+  }
+}

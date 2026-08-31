@@ -16,7 +16,7 @@ export default function HeroContent() {
       />
 
       <p className="font-body text-xl font-medium text-ink/80 sm:text-2xl">
-        Applied AI Engineer
+        Full Stack Engineer
       </p>
 
       <p className="max-w-md font-body text-base leading-relaxed text-ink/70 pb-6">

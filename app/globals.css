@@ -10,3 +10,21 @@
   --color-accent: #c08552;
   --color-accent-soft: #d9a97c;
 }
+
+/* LifeUpdateTicker — seamless right → left infinite marquee.
+   The row is twice the visible requirement (N identical copies) and slides by
+   exactly half its own width (-50%), so the two halves look identical and the
+   loop restarts with zero visual jump. */
+@keyframes life-update-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.life-update-marquee {
+  animation: life-update-marquee 60s linear infinite;
+  will-change: transform;
+}

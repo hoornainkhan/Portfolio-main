@@ -16,7 +16,7 @@ const SERVER_SCALE = 0.27;
 // handles the ground alignment). Character half-width is ~0.77 and the server
 // half-width is ~0.15 at this scale, so x = -1.05 keeps them side-by-side with
 // a small gap.
-const SERVER_POSITION: [number, number, number] = [-2.3, 0, -0.5];
+const SERVER_POSITION: [number, number, number] = [-1, 0, -0.3];
 const SERVER_ROTATION: [number, number, number] = [0,-Math.PI/4,0,];
 
 export default function Server() {

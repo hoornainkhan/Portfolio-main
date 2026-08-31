@@ -14,6 +14,10 @@ export default function Lights() {
         position={DIRECTIONAL_POSITION}
         intensity={DIRECTIONAL_INTENSITY}
         target-position={DIRECTIONAL_TARGET}
+        castShadow
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-bias={-0.0001}
       />
 
       <hemisphereLight

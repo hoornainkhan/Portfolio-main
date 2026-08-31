@@ -3,14 +3,14 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Lights from "../Three/Lights";
-import FrontendCharacter from "../Three/FrontendCharacter";
 
 const DPR: [number, number] = [1, 2];
 
 /**
- * The 3D Hoornain character for the HooriGPT section — shown on the right,
- * standing beside the interface like the person behind HooriGPT. Static T-pose,
- * full body, grounded, no prop, no animation.
+ * HooriGPT scene — the duplicated static character has been removed. The single
+ * persistent journey character (fixed `JourneyScene` overlay) will eventually
+ * reach this region and use its `thinking` clip. Keeping the Canvas + Lights
+ * here preserves the section's stage space so the layout stays stable.
  */
 export default function HooriGPTScene() {
   return (
@@ -22,7 +22,6 @@ export default function HooriGPTScene() {
     >
       <Suspense fallback={null}>
         <Lights />
-        <FrontendCharacter />
       </Suspense>
     </Canvas>
   );

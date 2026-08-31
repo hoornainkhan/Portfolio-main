@@ -11,8 +11,14 @@ const BACKEND_TECHNOLOGIES = [
   "MongoDB",
   "PostgreSQL",
   "SQL",
+  "SQLAlchemy",
+  "Mongoose",
+  "Prisma",
+  "GraphQL",
+  "GraphQL Yoga",
   "Docker",
   "Git",
+  "Bun",
   "REST APIs",
 ];
 

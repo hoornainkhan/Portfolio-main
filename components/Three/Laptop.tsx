@@ -14,7 +14,7 @@ const LAPTOP_SCALE = 0.18;
 // Place it right beside the character, flush on the floor (`Center bottom`
 // handles the ground alignment). Character half-width is ~0.77 and the laptop
 // half-width is ~0.28, so x = -1.2 keeps them side-by-side with a small gap.
-const LAPTOP_POSITION: [number, number, number] = [-1, -2, 0.3];
+const LAPTOP_POSITION: [number, number, number] = [1, -1, 0];
 const LAPTOP_ROTATION:  [number, number, number] = [0,-Math.PI/1.5,0,];
 
 export default function Laptop() {

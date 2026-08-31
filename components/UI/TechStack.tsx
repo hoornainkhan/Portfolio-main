@@ -15,6 +15,11 @@ import {
   SiPostgresql,
   SiDocker,
   SiGit,
+  SiGraphql,
+  SiPrisma,
+  SiSqlalchemy,
+  SiMongoose,
+  SiBun,
   SiLangchain,
   SiLanggraph,
   SiNvidia,
@@ -33,13 +38,13 @@ type TechMark = {
 // technologies with no official icon (React Three Fiber, GSAP, SQL, REST APIs)
 // we fall back to a small brand-tinted monogram badge.
 const TECH_MARKS: Record<string, TechMark> = {
-  JavaScript: { color: "#F7DF1E", Icon: SiJavascript },
+  JavaScript: { color: "#fecb04", Icon: SiJavascript },
   TypeScript: { color: "#3178C6", Icon: SiTypescript },
   React: { color: "#2b5bfb", Icon: SiReact },
   "Next.js": { color: "#000000", Icon: SiNextdotjs },
   "Tailwind CSS": { color: "#0EA5E9", Icon: SiTailwindcss },
   "Three.js": { color: "#000000", Icon: SiThreedotjs },
-  "React Three Fiber": { color: "#61DAFB", code: "R3" },
+  "React Three Fiber": { color: "#2b5bfb", code: "R3" },
   GSAP: { color: "#88CE02", code: "G" },
   Vite: { color: "#646CFF", Icon: SiVite },
   "Node.js": { color: "#339933", Icon: SiNodedotjs },
@@ -52,6 +57,13 @@ const TECH_MARKS: Record<string, TechMark> = {
   Docker: { color: "#2496ED", Icon: SiDocker },
   Git: { color: "#F05032", Icon: SiGit },
   "REST APIs": { color: "#C08552", code: "REST" },
+  // Additional backend APIs / databases / runtimes
+  GraphQL: { color: "#E10098", Icon: SiGraphql },
+  "GraphQL Yoga": { color: "#6B21A8", code: "GY" },
+  Prisma: { color: "#2D3748", Icon: SiPrisma },
+  SQLAlchemy: { color: "#D71F00", Icon: SiSqlalchemy },
+  Mongoose: { color: "#A62100", Icon: SiMongoose },
+  Bun: { color: "#B45309", Icon: SiBun },
   // AI Engineer alter
   "LLM Integration": { color: "#6B21A8", code: "LLM" },
   RAG: { color: "#16A34A", code: "RAG" },

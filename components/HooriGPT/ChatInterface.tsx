@@ -94,7 +94,8 @@ export default function ChatInterface({ data }: ChatInterfaceProps) {
   }
 
   return (
-    <div className="flex h-[380px] w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm lg:h-[420px]">
+    <div className="flex h-[380px] w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white
+     shadow-sm lg:h-[420px]">
       {/* Header — centered title, back chevron top-right */}
       <div className="relative flex items-center border-b border-gray-200 px-4 py-3.5">
         <h2 className="w-full text-center font-display text-xl font-semibold tracking-tight text-gray-900">

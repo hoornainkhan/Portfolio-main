@@ -7,11 +7,6 @@ const AI_TECHNOLOGIES = [
   "Python",
   "LLM Integration",
   "RAG",
-  "Embeddings",
-  "Vector Databases",
-  "FAISS",
-  "LangChain",
-  "LangGraph",
   "NVIDIA NIM",
 ];
 

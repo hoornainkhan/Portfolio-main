@@ -2,7 +2,7 @@ export default function HeroContent() {
   return (
     <div className="flex flex-col items-start gap-6 ">
       <p className="font-body text-sm font-medium uppercase tracking-[0.35em] text-accent">
-        Hey, I'm
+        Hey, I&apos;m
       </p>
 
       <h1 className="font-display text-6xl font-semibold leading-[0.95] tracking-tight text-ink sm:text-7xl lg:text-8xl">

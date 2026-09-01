@@ -3,16 +3,12 @@ import Button from "@/components/UI/Button";
 import TechStack from "@/components/UI/TechStack";
 import AIScene from "@/components/Three/AIScene";
 
-const AI_TECHNOLOGIES = [
-  "Python",
-  "LLM Integration",
-  "RAG",
-  "NVIDIA NIM",
-];
+const AI_TECHNOLOGIES = ["Python", "LLM Integration", "RAG", "NVIDIA NIM"];
 
 export default function AIAlter() {
   return (
     <section
+      id="ai"
       aria-label="AI Engineer Alter"
       className="relative flex min-h-screen items-center overflow-hidden py-24"
     >
@@ -25,10 +21,12 @@ export default function AIAlter() {
         </div>
 
         {/* Right — Alter information */}
-        <div className="order-1 flex flex-col items-start gap-6 lg:order-2 backdrop-blur-md
+        <div
+          className="order-1 flex flex-col items-start gap-6 lg:order-2 backdrop-blur-md
 border border-white/30
 rounded-3xl
-shadow-xl p-4">
+shadow-xl p-4"
+        >
           <p className="font-body text-sm font-medium uppercase tracking-[0.35em] text-accent">
             Alter 03
           </p>

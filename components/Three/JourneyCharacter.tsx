@@ -58,10 +58,12 @@ export interface JourneyCharacterHandle {
 }
 
 const MODEL_URL = "/hoornain.glb";
-const MODEL_SCALE = 100;
+// Slightly smaller than the Hero-era scale of 100 so the journey character is
+// more proportional to the fixed overlay's framing (roughly a 12% reduction).
+const MODEL_SCALE = 88;
 
 // Grounding shadow values (same look as the original Hero shadow).
-const SHADOW_RADIUS = 1.15;
+const SHADOW_RADIUS = 1.0;
 const SHADOW_OPACITY = 0.16;
 const SHADOW_SINK = 0.005;
 const FADE_DURATION = 0.35;

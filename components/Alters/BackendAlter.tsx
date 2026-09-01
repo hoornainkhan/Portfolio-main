@@ -25,15 +25,18 @@ const BACKEND_TECHNOLOGIES = [
 export default function BackendAlter() {
   return (
     <section
+      id="backend"
       aria-label="Backend Developer Alter"
       className="relative flex min-h-screen items-center overflow-hidden py-24"
     >
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 px-6 sm:px-10 lg:grid-cols-2 lg:gap-12 lg:px-16">
         {/* Left — Alter information */}
-        <div className="order-1 flex flex-col items-start gap-6 backdrop-blur-md
+        <div
+          className="order-1 flex flex-col items-start gap-6 backdrop-blur-md
 border border-white/30
 rounded-3xl
-shadow-xl p-4 lg:order-1">
+shadow-xl p-4 lg:order-1"
+        >
           <p className="font-body text-sm font-medium uppercase tracking-[0.35em] text-accent">
             Alter 02
           </p>

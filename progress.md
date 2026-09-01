@@ -247,8 +247,6 @@ clicks; it is `aria-hidden` (decorative).
 Hero stays visually sensible until the scroll controller owns animation state.
 
 ## Important Design Decisions
-
-## Important Design Decisions
 - **Design tokens** live in `globals.css` via Tailwind v4 `@theme inline` — no hardcoded colors/fonts in components.
 - **Josefin Sans** for the large display name; **Ubuntu** for body/subtitle text.
 - **Color palette**: cream (`#f7f6f3`), sand (`#f2ece6`), ink (`#2b2926`), accent (`#c08552`), accent-soft (`#d9a97c`).
@@ -260,7 +258,7 @@ Hero stays visually sensible until the scroll controller owns animation state.
 ## Important Technical Decisions
 
 - **`'use client'`** directives added to `Scene.tsx` and `Three/HeroCharacter.tsx` (required for R3F/Canvas).
-- **MODEL_SCALE = 100** — the GLB model is small in native units, so it's scaled up significantly to fill the viewport.
+- **Journey character scale**: `JourneyCharacter` uses `MODEL_SCALE = 88` (~12% smaller than the old Hero-era 100) to fit the persistent-journey framing without shrinking the static props.
 - **Animation**: The model has a **"waving"** animation. The code targets `actions["waving"]` specifically (not just the first animation), with `reset().fadeIn(0.5).play()` and cleanup via `fadeOut(0.5).stop()`.
 - **Camera framing**: FOV 35, position `[0, 1.6, 5.2]`, lookAt `[0, 1.4, 0]` — frames the character with headroom, feet not cropped.
 - **Lighting**: Ambient + directional (key) + hemisphere (warm ground `#d9c9a3`) for soft daylight that blends with the bright landscape.
@@ -283,21 +281,21 @@ Hero stays visually sensible until the scroll controller owns animation state.
 - `/hoornain.glb` contains **exactly 5 verified clips**: `idle`, `running`,
   **`t-pose`**, `thinking`, `waving`. **There is NO `walking` clip** (do not
   invent one).
-- After Phase 2, the **single** animated character is `Three/JourneyCharacter.tsx`
-  inside the persistent `Three/JourneyScene.tsx` overlay — it temporarily plays
-  `waving` on mount so the Hero looks sensible.
-- Animation is now controlled through the imperative `JourneyCharacterHandle`
-  (`setAnimation`/`getActions`/`outer` group). The GSAP controller owns switching
-  next phase; no scroll logic present yet.
-- Cleanup on unmount fades out and stops all actions (HMR-safe).
-- No manual animation creation; no GSAP; no scroll-based movement yet.
+- **One** animated character (`Three/JourneyCharacter.tsx`, scale 88) lives in
+  the persistent `Three/JourneyScene` overlay; the GSAP `JourneyController`
+  drives it. Current scroll segment: Hero → Frontend (waving on load).
+- Position = scrubbed ScrollTrigger timeline; facing = direction state
+  (`travelYaw` forward, `travelYaw + PI` reversed); animation = activity +
+  progress (waving @ Hero, running while scrolling, idle when stopped/checkpoint).
+- All created inside `gsap.context()` + `matchMedia()`; context revert cleans up
+  ScrollTriggers, tweens and stop-timers (HMR-safe, no duplicated triggers).
 
 ## Current Problems / Issues
 
 1. **Browser verification pending**: `tsc --noEmit` and `eslint` pass on the current state, but visual checks in the browser (3D framing, prop placement, alignment, overflow) are still pending.
 2. **`tsc-check.txt` / `lint-check.txt` are gone** (previously leftover verification artifacts at project root) — resolved. `tsconfig.tsbuildinfo` remains.
 3. **HeroContent lint issue**: The apostrophe in "I'm" was flagged earlier by `react/no-unescaped-entities`. (HooriGPT avoids this by using the curly quote `’`.)
-4. **Model scale / camera framing**: `MODEL_SCALE = 100` and the camera may need tuning — the character could be too large or cropped. Needs visual verification in the browser.
+4. **Model scale / camera framing**: journey character is `MODEL_SCALE = 88`; camera framing for the new fixed overlay may still need tuning. Needs visual verification in the browser.
 5. **`Server.tsx` scale inconsistency**: `SERVER_SCALE = 0.27` but the file's inline comment still derives `≈ 0.072` — one of them is wrong; verify visually.
 6. **`app/page.tsx`**: all sections (Hero, 3 alters, HooriGPT, Ending) are implemented; `Ending` is done. `app/projects/page.tsx` is still a content placeholder.
 

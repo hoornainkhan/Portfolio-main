@@ -32,7 +32,7 @@ export default function Ending() {
   }, []);
 
   return (
-    <section aria-label="Ending" className="bg-cream">
+    <section id="ending" aria-label="Ending" className="bg-cream">
       <div
         ref={ref}
         className={`mx-auto w-full max-w-7xl pt-6 py-24 sm:pb-1 lg:pb-2 sm:pt-10 lg:pt-16 lg:py-32 ${inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"} transition-all duration-700 ease-out`}

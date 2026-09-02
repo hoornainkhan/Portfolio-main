@@ -115,6 +115,9 @@ export default function Ending() {
 
         {/* Personality line + copyright */}
         <div className="mt-20 border-t border-ink/10 pt-5 text-center">
+        <p className="font-body text-sm text-ink/60">
+            This was built with Next.js · TypeScript · Three.js · React Three Fiber · Drei · GSAP · ScrollTrigger · Tailwind CSS 
+          </p>
           <p className="font-body text-sm text-ink/60">
             Built with curiosity, caffeine &amp; an unreasonable amount of
             debugging.

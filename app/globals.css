@@ -28,3 +28,436 @@
   animation: life-update-marquee 60s linear infinite;
   will-change: transform;
 }
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+  background: #f7f6f3;
+  color: #2b2926;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 900ms cubic-bezier(0.77, 0, 0.175, 1),
+    visibility 900ms;
+
+  isolation: isolate;
+}
+
+.loading-screen--exit {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.loading-screen__background {
+  position: absolute;
+  inset: -20px;
+
+  background-image: url("/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transform: scale(1.03);
+
+  transition: filter 100ms linear;
+
+  z-index: -3;
+}
+
+
+/* =========================================================
+   PIXELATION
+   ========================================================= */
+
+.loading-screen__pixelation {
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  /*
+   * The repeating gradients create a pixel-grid impression
+   * while the background becomes progressively clearer.
+   */
+  background-image:
+    linear-gradient(
+      rgba(247, 246, 243, 0.72) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(247, 246, 243, 0.72) 1px,
+      transparent 1px
+    );
+
+  pointer-events: none;
+
+  transition:
+    opacity 100ms linear,
+    background-size 100ms linear;
+}
+
+
+/* =========================================================
+   SCANLINES
+   ========================================================= */
+
+.loading-screen__scanlines {
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 3px,
+      rgba(43, 41, 38, 0.025) 4px
+    );
+
+  mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.loading-screen__content {
+  width: min(520px, calc(100% - 48px));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.loading-screen__eyebrow {
+  margin-bottom: 14px;
+
+  font-family: var(--font-ubuntu), sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+
+  color: rgba(43, 41, 38, 0.5);
+
+  animation: loading-flicker 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.loading-screen__title {
+  margin: 0;
+
+  font-family: var(--font-josefin-sans), sans-serif;
+  font-size: clamp(38px, 7vw, 72px);
+  font-weight: 700;
+
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+
+  color: #2b2926;
+}
+
+.loading-screen__title span {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 0.45em;
+  font-weight: 500;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: rgba(43, 41, 38, 0.55);
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.loading-screen__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 30px;
+
+  font-family: var(--font-ubuntu), sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(43, 41, 38, 0.6);
+}
+
+.loading-screen__status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #c08552;
+
+  animation: loading-pulse 1s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.loading-screen__progress-wrapper {
+  width: 100%;
+
+  margin-top: 18px;
+}
+
+.loading-screen__progress-track {
+  width: 100%;
+  height: 2px;
+
+  overflow: hidden;
+
+  background: rgba(43, 41, 38, 0.12);
+}
+
+.loading-screen__progress-fill {
+  width: 100%;
+  height: 100%;
+
+  transform-origin: left center;
+
+  background: #2b2926;
+
+  will-change: transform;
+}
+
+.loading-screen__progress-info {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 8px;
+
+  font-family: var(--font-ubuntu), sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.18em;
+
+  color: rgba(43, 41, 38, 0.42);
+}
+
+
+/* =========================================================
+   LOADING BLOCKS
+   ========================================================= */
+
+.loading-screen__blocks {
+  display: flex;
+  gap: 4px;
+
+  margin-top: 18px;
+}
+
+.loading-screen__block {
+  width: 7px;
+  height: 7px;
+
+  border: 1px solid rgba(43, 41, 38, 0.18);
+
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.loading-screen__block--active {
+  border-color: #2b2926;
+  background: #2b2926;
+}
+
+
+/* =========================================================
+   CORNER INFORMATION
+   ========================================================= */
+
+.loading-screen__corner {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  font-family: var(--font-ubuntu), sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: rgba(43, 41, 38, 0.35);
+}
+
+.loading-screen__corner--top-left {
+  top: 24px;
+  left: 28px;
+}
+
+.loading-screen__corner--top-right {
+  top: 24px;
+  right: 28px;
+  text-align: right;
+}
+
+.loading-screen__corner--bottom-left {
+  bottom: 24px;
+  left: 28px;
+}
+
+.loading-screen__corner--bottom-right {
+  right: 28px;
+  bottom: 24px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes loading-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loading-flicker {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.85;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .loading-screen__corner {
+    font-size: 7px;
+  }
+
+  .loading-screen__corner--top-left {
+    top: 18px;
+    left: 18px;
+  }
+
+  .loading-screen__corner--top-right {
+    top: 18px;
+    right: 18px;
+  }
+
+  .loading-screen__corner--bottom-left {
+    bottom: 18px;
+    left: 18px;
+  }
+
+  .loading-screen__corner--bottom-right {
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .loading-screen__status {
+    margin-top: 24px;
+    font-size: 9px;
+  }
+
+  .loading-screen__blocks {
+    gap: 3px;
+  }
+
+  .loading-screen__block {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-screen__status-dot,
+  .loading-screen__eyebrow {
+    animation: none;
+  }
+
+  .loading-screen {
+    transition: none;
+  }
+}
+/* =========================================================
+   PROJECT MODAL - /projects
+   ========================================================= */
+@keyframes modal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-enter {
+  animation: modal-enter 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-enter {
+    animation: none;
+  }
+}
+

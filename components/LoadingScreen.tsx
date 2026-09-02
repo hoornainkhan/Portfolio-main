@@ -2,108 +2,157 @@
 
 import { useEffect, useState } from "react";
 
-const MIN_LOADING_TIME = 10000;
+const LOADING_DURATION = 10000;
 
 export default function LoadingScreen() {
   const [progress, setProgress] = useState(0);
-  const [exiting, setExiting] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
+  const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
     const start = performance.now();
 
     let frame: number;
 
-    const animate = (now: number) => {
+    const update = (now: number) => {
       const elapsed = now - start;
-      const percentage = Math.min(elapsed / MIN_LOADING_TIME, 1);
+      const nextProgress = Math.min(elapsed / LOADING_DURATION, 1);
 
-      setProgress(percentage * 100);
+      setProgress(nextProgress);
 
-      if (percentage < 1) {
-        frame = requestAnimationFrame(animate);
+      if (nextProgress < 1) {
+        frame = requestAnimationFrame(update);
       } else {
-        setExiting(true);
+        setIsExiting(true);
 
-        setTimeout(() => {
-          document.body.classList.remove("loading-active");
-        }, 1000);
+        window.setTimeout(() => {
+          setIsDone(true);
+        }, 900);
       }
     };
 
-    document.body.classList.add("loading-active");
-
-    frame = requestAnimationFrame(animate);
+    frame = requestAnimationFrame(update);
 
     return () => {
       cancelAnimationFrame(frame);
-      document.body.classList.remove("loading-active");
     };
   }, []);
 
+  if (isDone) return null;
+
+  const percentage = Math.floor(progress * 100);
+
+  /*
+   * Pixelation starts strong and gradually disappears.
+   *
+   * 18px → 0px
+   */
+  const pixelSize = Math.max(0, 18 * (1 - progress));
+
   return (
     <div
-      className={`fixed inset-0 z-[100] overflow-hidden bg-[#F7F6F3] ${
-        exiting ? "loading-screen-exit" : ""
+      className={`loading-screen ${
+        isExiting ? "loading-screen--exit" : ""
       }`}
       aria-label="Loading Hoornain's world"
+      role="status"
     >
-      {/* Pixelated background */}
-      <div className="absolute inset-0">
-        <img
-          src="/background.png"
-          alt=""
-          className="loading-pixel-background"
-        />
+      {/* Background */}
+      <div
+        className="loading-screen__background"
+        style={{
+          filter: `blur(${pixelSize * 0.12}px)`,
+        }}
+      />
 
-        {/* Gradually removes the harshness of the pixelated layer */}
-        <div
-          className="absolute inset-0 bg-[#F7F6F3]/35"
-          style={{
-            opacity: Math.max(0, 1 - progress / 100),
-          }}
-        />
-      </div>
+      {/* Pixelation overlay */}
+      <div
+        className="loading-screen__pixelation"
+        style={{
+          opacity: 1 - progress,
+          backgroundSize: `${Math.max(pixelSize, 1)}px ${Math.max(
+            pixelSize,
+            1
+          )}px`,
+        }}
+      />
 
-      {/* Soft neutral overlay */}
-      <div className="absolute inset-0 bg-[#F7F6F3]/25 backdrop-blur-[1px]" />
+      {/* Subtle scanlines */}
+      <div className="loading-screen__scanlines" />
 
-      {/* Loading content */}
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center">
-        <div className="flex flex-col items-center">
-          <p className="font-display text-xs uppercase tracking-[0.35em] text-ink/50">
-            Entering
-          </p>
+      {/* Main loading content */}
+      <div className="loading-screen__content">
+        <div className="loading-screen__eyebrow">
+          INITIALIZING WORLD
+        </div>
 
-          <h1 className="mt-3 font-display text-3xl font-semibold tracking-[0.12em] text-ink sm:text-4xl">
-            HOORNAIN'S WORLD
-          </h1>
+        <h1 className="loading-screen__title">
+          HOORNAIN
+          <span>'S WORLD</span>
+        </h1>
 
-          <div className="mt-8 flex items-center gap-3">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent [animation-delay:150ms]" />
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent [animation-delay:300ms]" />
-          </div>
+        <div className="loading-screen__status">
+          <span className="loading-screen__status-dot" />
+          <span>
+            {percentage < 30
+              ? "Loading environment..."
+              : percentage < 65
+                ? "Building the world..."
+                : percentage < 90
+                  ? "Preparing your journey..."
+                  : "Almost ready..."}
+          </span>
+        </div>
 
-          {/* Progress bar */}
-          <div className="mt-7 h-px w-48 overflow-hidden bg-ink/10 sm:w-64">
+        {/* Progress bar */}
+        <div className="loading-screen__progress-wrapper">
+          <div className="loading-screen__progress-track">
             <div
-              className="h-full bg-ink/50 transition-[width] duration-100 ease-linear"
-              style={{ width: `${progress}%` }}
+              className="loading-screen__progress-fill"
+              style={{
+                transform: `scaleX(${progress})`,
+              }}
             />
           </div>
 
-          <div className="mt-3 flex w-48 justify-between font-body text-[10px] uppercase tracking-[0.25em] text-ink/40 sm:w-64">
-            <span>Loading</span>
-            <span>{Math.round(progress)}%</span>
+          <div className="loading-screen__progress-info">
+            <span>LOADING</span>
+            <span>{String(percentage).padStart(3, "0")}%</span>
           </div>
         </div>
 
-        {/* Bottom game-like status */}
-        <div className="absolute bottom-8 left-0 right-0 text-center">
-          <p className="font-body text-[10px] uppercase tracking-[0.3em] text-ink/35">
-            Preparing your journey
-          </p>
+        {/* Decorative loading blocks */}
+        <div className="loading-screen__blocks" aria-hidden="true">
+          {Array.from({ length: 12 }).map((_, index) => (
+            <span
+              key={index}
+              className={
+                index / 12 <= progress
+                  ? "loading-screen__block loading-screen__block--active"
+                  : "loading-screen__block"
+              }
+            />
+          ))}
         </div>
+      </div>
+
+      {/* Corner information */}
+      <div className="loading-screen__corner loading-screen__corner--top-left">
+        <span>WORLD_01</span>
+        <span>BOOT_SEQUENCE</span>
+      </div>
+
+      <div className="loading-screen__corner loading-screen__corner--top-right">
+        <span>3D_ENV</span>
+        <span>ONLINE</span>
+      </div>
+
+      <div className="loading-screen__corner loading-screen__corner--bottom-left">
+        <span>PLEASE WAIT</span>
+      </div>
+
+      <div className="loading-screen__corner loading-screen__corner--bottom-right">
+        <span>v1.0</span>
       </div>
     </div>
   );

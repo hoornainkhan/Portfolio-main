@@ -1,0 +1,308 @@
+[
+  {
+    "id": 1,
+    "title": "FixPal Lite",
+    "onlineDescription": "AI-powered debugging assistant that analyzes project code, identifies likely root causes, and generates focused fixes.",
+    "description": "FixPal Lite helps developers move from an error message to a focused explanation and code fix. It accepts project files, ZIP archives, screenshots, or public GitHub repositories, intelligently ranks the files most relevant to an error, extracts focused code context, and sends that context to an NVIDIA-hosted LLM for structured debugging analysis.",
+    "labels": [
+      "frontend",
+      "backend",
+      "fullstack",
+      "Ai-powered"
+    ],
+    "repoLinks": [
+      "https://github.com/hoornainkhan/fixpal-lite"
+    ],
+    "liveLink": "https://fixpal-lite.vercel.app/",
+    "image": "/projects/fixpal-lite.png",
+    "techStack": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "Multer",
+      "Sharp",
+      "Tesseract.js",
+      "Adm-Zip",
+      "Simple-Git",
+      "NVIDIA API",
+      "NVIDIA-hosted LLM",
+      "Docker",
+      "Vercel",
+      "Render"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Synthia",
+    "onlineDescription": "AI-powered synthetic dataset generator for creating realistic tabular, text, and image datasets.",
+    "description": "Synthia is a full-stack synthetic data generation platform that combines rule-based generation with AI APIs. It can generate structured tabular datasets with configurable schemas and correlations, AI-generated text datasets through NVIDIA NIM, and image datasets using Unsplash with fallback generation when external APIs are unavailable.",
+    "labels": [
+      "frontend",
+      "backend",
+      "fullstack",
+      "Ai-powered"
+    ],
+    "repoLinks": [
+      "https://github.com/hoornainkhan/synthia"
+    ],
+    "liveLink": null,
+    "image": "/projects/synthia.png",
+    "techStack": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Recharts",
+      "React Router",
+      "Node.js",
+      "Express.js",
+      "NVIDIA NIM API",
+      "Unsplash API"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Type Speedo",
+    "onlineDescription": "A full-stack typing speed game with authentication, game history, personal bests, and a global leaderboard.",
+    "description": "Type Speedo is a keyboard-focused typing game where players race against the clock through randomly generated characters. The application tracks completion time, incorrect attempts, penalty time, personal best scores, game history, and global rankings, with a separate GraphQL backend handling authentication and persistent game data.",
+    "labels": [
+      "frontend",
+      "backend",
+      "fullstack"
+    ],
+    "repoLinks": [
+      "https://github.com/hoornainkhan/typeSpeedo-frontend",
+      "https://github.com/hoornainkhan/typeSpeedo-backend"
+    ],
+    "liveLink": null,
+    "image": "/projects/typeSpeedo.png",
+    "techStack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Poppins",
+      "Lucide React",
+      "GraphQL",
+      "GraphQL Yoga",
+      "Bun",
+      "Prisma",
+      "PostgreSQL",
+      "JWT",
+      "bcryptjs",
+      "Docker"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "VAULT",
+    "onlineDescription": "Secure backend service for storing, retrieving, and managing encrypted secrets through an authenticated API.",
+    "description": "VAULT is the backend service behind Cyber Vault Keeper, providing programmatic management of encrypted vault entries. It handles user authentication and authorization, CRUD operations for secrets, encrypted storage, ownership metadata, and an extensible API designed for secure integrations.",
+    "labels": [
+      "backend"
+    ],
+    "repoLinks": [
+      "https://github.com/hoornainkhan/vaultBackend"
+    ],
+    "liveLink": "https://cyber-vault-keeper.vercel.app/",
+    "image": "/projects/vault.png",
+    "techStack": [
+      "Node.js",
+      "JavaScript",
+      "Express",
+      "JWT",
+      "Prisma",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Library Management",
+    "onlineDescription": "Full-stack library management system for browsing, borrowing, tracking, and administering books.",
+    "description": "A MERN-based library management platform where users can browse and search books, borrow them, track active and historical borrowings, and view due dates and fines. Administrators get a dedicated dashboard for managing books, inventory, categories, users, and borrowing activity.",
+    "labels": [
+      "frontend",
+      "backend",
+      "fullstack"
+    ],
+    "repoLinks": [
+      "https://github.com/hoornainkhan/library-management"
+    ],
+    "liveLink": "https://library-management-pink-six.vercel.app/",
+    "image": "/projects/library-management.png",
+    "techStack": [
+      "React",
+      "React Router",
+      "Axios",
+      "Tailwind CSS",
+      "React Icons",
+      "Vite",
+      "Node.js",
+      "Express.js",
+      "MongoDB Atlas",
+      "Mongoose",
+      "JWT",
+      "bcryptjs",
+      "Morgan",
+      "CORS",
+      "Gutendex API",
+      "Vercel",
+      "Render"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "LeadDesk",
+    "onlineDescription": "Lead management platform with a responsive public landing page and secure administrator dashboard.",
+    "description": "LeadDesk is a full-stack lead management application consisting of a React frontend and Node.js backend. Visitors can submit lead information through a validated form, while authenticated administrators can securely access, search, and update submitted leads through a protected dashboard.",
+    "labels": [
+      "frontend",
+      "backend",
+      "fullstack"
+    ],
+    "repoLinks": [
+      "https://github.com/hoornainkhan/leadDesk-frontend",
+      "https://github.com/hoornainkhan/leadDesk-backend"
+    ],
+    "liveLink": "https://lead-desk-frontend.vercel.app/",
+    "image": "/projects/leadDesk.png",
+    "techStack": [
+      "React",
+      "Vite",
+      "React Router DOM",
+      "Tailwind CSS",
+      "Axios",
+      "React Hot Toast",
+      "Node.js",
+      "Express.js",
+      "MongoDB Atlas",
+      "Mongoose",
+      "JWT",
+      "bcryptjs",
+      "Cookie Parser",
+      "CORS",
+      "dotenv"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Smart Farming UI",
+    "onlineDescription": "Responsive smart farming dashboard for monitoring agricultural sensors, visualizing telemetry, and controlling farm devices.",
+    "description": "Smart Farming UI is a React-based precision agriculture dashboard designed around IoT-enabled farms. It provides interfaces for monitoring temperature, humidity, and soil moisture, viewing historical telemetry, controlling irrigation and other devices, and receiving threshold-based alerts through a responsive dashboard.",
+    "labels": [
+      "frontend"
+    ],
+    "repoLinks": [
+      "https://github.com/hoornainkhan/smart-farming-ui"
+    ],
+    "liveLink": null,
+    "image": "/projects/smart-farming-ui.png",
+    "techStack": [
+      "React",
+      "Vite",
+      "Axios",
+      "Recharts",
+      "Context API",
+      "WebSockets",
+      "Socket.io",
+      "Server-Sent Events",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "SMTP Sender",
+    "onlineDescription": "Lightweight SMTP email service with a web interface and REST API for sending transactional emails.",
+    "description": "SMTP Sender provides a simple interface and API for sending emails directly through an SMTP server. It supports authenticated SMTP connections, TLS, HTML and plain-text messages, and programmatic sending through a REST endpoint, making it useful for development, testing, and lightweight transactional email workflows.",
+    "labels": [
+      "frontend",
+      "backend",
+      "fullstack"
+    ],
+    "repoLinks": [
+      "https://github.com/hoornainkhan/smtp-sender"
+    ],
+    "liveLink": null,
+    "image": "/projects/smtp-sender.png",
+    "techStack": [
+      "Node.js",
+      "JavaScript",
+      "Express",
+      "Nodemailer",
+      "HTML5",
+      "CSS3",
+      "Vanilla JavaScript",
+      "SMTP",
+      "TLS"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "TaskManager",
+    "onlineDescription": "Full-stack MERN task management application with authentication and a Kanban-style workflow.",
+    "description": "TaskManager is a full-stack task tracking application built around a Kanban-style board. Users can create, update, search, organize, and delete tasks while managing priorities, due dates, and statuses across Pending, In Progress, and Completed columns, with authentication and persistent database-backed data.",
+    "labels": [
+      "frontend",
+      "backend",
+      "fullstack"
+    ],
+    "repoLinks": [
+      "https://github.com/hoornainkhan/taskManager"
+    ],
+    "liveLink": "https://task-manager-chi-steel.vercel.app/",
+    "image": "/projects/taskManager.png",
+    "techStack": [
+      "React.js",
+      "Vite",
+      "React Router",
+      "Axios",
+      "Tailwind CSS",
+      "React Hot Toast",
+      "Context API",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "bcryptjs",
+      "express-validator",
+      "Helmet",
+      "CORS"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Naye Pankh",
+    "onlineDescription": "Full-stack volunteer management system and NGO website built for NayePankh Foundation.",
+    "description": "NayePankh combines a responsive NGO website with a full-stack volunteer management system. The platform supports volunteer registration, administrator authentication, approval and rejection workflows, dashboard statistics, and downloadable CSV reports, while the frontend focuses on responsive presentation and accessible organization information.",
+    "labels": [
+      "frontend",
+      "backend",
+      "fullstack"
+    ],
+    "repoLinks": [
+      "https://github.com/hoornainkhan/nayepankh-fullstack-task",
+      "https://github.com/hoornainkhan/nayepankh-frontend-and-webdev-task"
+    ],
+    "liveLink": "https://nayepankh-volunteer-system-f6ys.onrender.com/",
+    "image": "/projects/nayepankh-website.png",
+    "techStack": [
+      "React",
+      "Tailwind CSS",
+      "React Router",
+      "Axios",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "bcrypt",
+      "HTML5",
+      "Vanilla JavaScript",
+      "Google Fonts",
+      "Material Icons",
+      "Render",
+      "MongoDB Atlas"
+    ]
+  }
+]

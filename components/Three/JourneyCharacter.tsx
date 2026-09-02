@@ -5,6 +5,7 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
+  useLayoutEffect,
   useMemo,
   useRef,
 } from "react";
@@ -111,14 +112,17 @@ const JourneyCharacter = forwardRef<
     [actions],
   );
 
-  // Temporary initial clip (waving keeps the Hero visually sensible until the
-  // GSAP controller owns animation state in the next phase).
-  useEffect(() => {
+  // Initial clip played ONCE before the browser paints, at FULL influence
+  // (no 0->1 fadeIn), so the GLB is never shown in its bind/T-pose. All
+  // SUBSEQUENT transitions keep the smooth crossfade path in `play()` above.
+  useLayoutEffect(() => {
     if (initializedRef.current) return;
-    if (!actions[initialAnimation]) return;
+    const first = actions[initialAnimation];
+    if (!first) return;
     initializedRef.current = true;
-    play(initialAnimation);
-  }, [actions, initialAnimation, play]);
+    first.reset().setEffectiveWeight(1).play();
+    currentActionRef.current = first;
+  }, [actions, initialAnimation]);
 
   // HMR/unmount hygiene: fade out + stop everything so no actions leak.
   useEffect(() => {

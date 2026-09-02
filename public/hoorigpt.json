@@ -194,7 +194,7 @@
       "id": "my-stack",
       "label": "My stack",
       "question": "What technologies does Hoornain work with?",
-      "response": "My stack spans frontend development, backend engineering, and AI Engineering. I work with JavaScript, TypeScript, React, Next.js, Tailwind CSS, Three.js, React Three Fiber, GSAP, Vite, Node.js, Express, Python, FastAPI, MongoDB, PostgreSQL, SQL, Docker, Git, LLM integrations, RAG, embeddings, vector databases, FAISS, LangChain, LangGraph, and NVIDIA NIM.",
+      "response": "My stack spans frontend development, backend engineering, and AI Engineering. I work with JavaScript, TypeScript, React, Next.js, Tailwind CSS, Three.js, React Three Fiber, GSAP, Vite, Node.js, Express, Python, FastAPI, MongoDB, PostgreSQL, SQL, Docker, Git, LLM integrations, RAG, embeddings, vector databases,GraphQl,Prisma ORM, and so on....",
       "followUpTopics": [
         "frontend-stack",
         "backend-stack",

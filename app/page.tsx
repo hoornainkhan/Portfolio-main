@@ -1,3 +1,4 @@
+import LoadingScreen from "@/components/LoadingScreen";
 import Hero from "@/components/Hero/Hero";
 import FrontendAlter from "@/components/Alters/FrontendAlter";
 import BackendAlter from "@/components/Alters/BackendAlter";
@@ -11,6 +12,8 @@ import JourneyExperience from "@/components/Three/JourneyExperience";
 export default function Home() {
   return (
     <>
+      <LoadingScreen />
+
       <LifeUpdateTicker />
 
       <ContactRail />

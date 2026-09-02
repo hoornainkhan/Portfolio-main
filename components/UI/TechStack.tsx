@@ -23,6 +23,14 @@ import {
   SiLangchain,
   SiLanggraph,
   SiNvidia,
+  SiHtml5,
+  SiCss,
+  SiVercel,
+  SiUnsplash,
+  SiReactrouter,
+  SiAxios,
+  SiMaterialdesignicons,
+  SiGooglefonts,
 } from "react-icons/si";
 
 type TechMark = {
@@ -73,6 +81,27 @@ const TECH_MARKS: Record<string, TechMark> = {
   LangChain: { color: "#1F6F3A", Icon: SiLangchain },
   LangGraph: { color: "#1C6FB3", Icon: SiLanggraph },
   "NVIDIA NIM": { color: "#76B900", Icon: SiNvidia },
+  // Projects page technologies (from /public/projects.json) — additive only.
+  "Tesseract.js": { color: "#01BFBF", code: "Ts" },
+  Vercel: { color: "#000000", Icon: SiVercel },
+  "React Router": { color: "#CA4245", Icon: SiReactrouter },
+  Recharts: { color: "#22B8CF", code: "RC" },
+  "Unsplash API": { color: "#111111", Icon: SiUnsplash },
+  JWT: { color: "#FF3D6D", code: "JWT" },
+  bcryptjs: { color: "#66B032", code: "bcj" },
+  bcrypt: { color: "#4B8BBE", code: "bcr" },
+  "React Icons": { color: "#61DAFB", code: "RI" },
+  Axios: { color: "#5A29E4", Icon: SiAxios },
+  "MongoDB Atlas": { color: "#47A248", Icon: SiMongodb },
+  "React Hot Toast": { color: "#F59E0B", code: "RHT" },
+  WebSockets: { color: "#16A085", code: "WS" },
+  Nodemailer: { color: "#2B6CB0", code: "NM" },
+  HTML: { color: "#E34F26", Icon: SiHtml5 },
+  CSS: { color: "#1572B6", Icon: SiCss },
+  SMTP: { color: "#4A5568", code: "SMTP" },
+  "Context API": { color: "#6366F1", code: "CA" },
+  "Google Fonts": { color: "#4285F4", Icon: SiGooglefonts },
+  "Material Icons": { color: "#00897B", Icon: SiMaterialdesignicons },
 };
 
 const FALLBACK_MARK: TechMark = { color: "#2B2926", code: "•" };

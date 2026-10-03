@@ -13,7 +13,7 @@
  * Rendered only from `app/page.tsx` (homepage `/`), NOT from `app/projects`.
  */
 const LIFE_UPDATE_TEXT =
-  " : Currently looking for full-time remote opportunities";
+  " : Currently interning at BURDENOFF CONSULTANCY";
 
 // How many identical copies of the text are placed side by side. The animation
 // shifts the row by half its width, so the two halves must each be wider than
